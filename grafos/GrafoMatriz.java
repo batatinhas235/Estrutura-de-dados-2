@@ -51,18 +51,18 @@ public class GrafoMatriz {
 
     }
 
-    public void imprimirMatriz(){
+    public void imprimirMatriz() {
         System.out.print("\t");
-        for(int i = 0; i< numeroVertices; i++){
+        for (int i = 0; i < numeroVertices; i++) {
             System.out.print(i + "\t");
         }
         System.out.println("\n\t-------------------------------------");
         for (int i = 0; i < numeroVertices; i++) {
-            System.out.print(i+"|\t");
+            System.out.print(i + "|\t");
             for (int j = 0; j < numeroVertices; j++) {
                 if (isSetMatriz[i][j]) {
-                    System.out.print(matriz[i][j]+"\t");
-                }else{
+                    System.out.print(matriz[i][j] + "\t");
+                } else {
                     System.out.print("#\t");
                 }
             }
@@ -70,14 +70,26 @@ public class GrafoMatriz {
         }
     }
 
-    public boolean temAresta(int origem, int destino){
+    public void imprimirArestas() {
+        for (int i = 0; i < numeroVertices; i++) {
+            System.out.print("Vértice: " + i + " está conectado à: ");
+            for (int j = 0; j < numeroVertices; j++) {
+                if (isSetMatriz[i][j]) {
+                    System.out.print("\t" + j);
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public boolean temAresta(int origem, int destino) {
         return isSetMatriz[origem][destino];
     }
 
-    public Integer getValorAresta(int origem, int destino){
+    public Integer getValorAresta(int origem, int destino) {
         if (!ponderado || !isSetMatriz[origem][destino]) {
             return null;
-        } 
+        }
         return matriz[origem][destino];
     }
 }
