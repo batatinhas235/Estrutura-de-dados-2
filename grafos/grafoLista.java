@@ -44,15 +44,20 @@ public class grafoLista {
     public void imprimirArestas() {
         for (No no : mapaAdjacencia.keySet()) {
             System.out.print("o " + no.getNome() + " tem as ligações: ");
-            if (mapaAdjacencia.get(no)!= null) {
+            if (mapaAdjacencia.get(no) != null) {
                 for (No destino : mapaAdjacencia.get(no)) {
-                    System.out.print("\t"+destino.getNome());
+                    System.out.print("\t" + destino.getNome());
                 }
                 System.out.println();
-                
-            }else{
+
+            } else {
                 System.out.println("nenhuma");
             }
         }
+    }
+
+    public boolean temAresta(No origem, No destino) {
+        return mapaAdjacencia.containsKey(origem) && mapaAdjacencia.get(origem) != null
+                && mapaAdjacencia.get(origem).contains(destino);
     }
 }
