@@ -16,6 +16,7 @@ public class grafoLista {
         if (!mapaAdjacencia.keySet().contains(origem)) {
             mapaAdjacencia.put(origem, null);
         }
+        
         if (!mapaAdjacencia.keySet().contains(destino)) {
             mapaAdjacencia.put(destino, null);
         }
@@ -48,6 +49,7 @@ public class grafoLista {
                 for (No destino : mapaAdjacencia.get(no)) {
                     System.out.print("\t" + destino.getNome());
                 }
+
                 System.out.println();
 
             } else {

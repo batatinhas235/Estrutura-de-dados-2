@@ -1,4 +1,4 @@
-package grafos;
+package grafosMatriz;
 
 public class GrafoMatriz {
     private int numeroVertices;
@@ -17,7 +17,7 @@ public class GrafoMatriz {
         this.isSetMatriz = new boolean[numeroVertices][numeroVertices];
     }
 
-    public void adicionarAresta(int origem, int destino) {
+    public  void adicionarAresta(int origem, int destino) {
         int aresta = 1;
 
         if (ponderado) {
@@ -31,6 +31,7 @@ public class GrafoMatriz {
             matriz[destino][origem] = aresta;
             isSetMatriz[destino][origem] = true;
         }
+       
 
     }
 
